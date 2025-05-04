@@ -1,0 +1,127 @@
+
+% 封面
+	
+% 辅助宏
+\newcolumntype{J}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}{>{\RaggedRight\hangafter=1\hangindent=0em}X}
+\newcommand{\mysep}{\hspace{5.33pt}}
+\newcommand\covertable[2][7cm]{\makebox[#1][l]{#2}} 
+\newcommand\xiahuabox[2][4cm]{\underline{\makebox[#1][c]{#2}}} 
+
+\begin{titlepage}
+	
+	%----------------------中文封面----------------------
+	
+	\begin{flushleft}
+		中图分类号：\nuaaBookClassNum \hfill 论文编号：\nuaaThesisid \\
+		学科分类号：\nuaaSubjectNum
+	\end{flushleft}
+	
+	\centering
+	\vspace*{1cm}
+	
+	{\songti\zihao{0} \nuaaMasterOrDoctor 士学位论文 \par}
+	
+	\vspace{1.5cm}
+	
+	{\heiti\zihao{1} \nuaaTitle \par}
+		
+	\vspace{2cm}
+
+	\zihao{3}
+	{
+		\songti
+		\makebox[2.9cm][s]{研究生姓名}\makebox[1.7cm][s]{}\covertable[5cm]{\nuaaAuthorName}\\
+		\makebox[2.9cm][s]{学科、专业}\makebox[1.7cm][s]{}\covertable[5cm]{\nuaaMajor}\\
+		\makebox[2.9cm][s]{研究方向}\makebox[1.7cm][s]{}\covertable[5cm]{\nuaaInterests}\\
+		\makebox[2.9cm][s]{指导教师}\makebox[1.7cm][s]{}\covertable[5cm]{\nuaaBigBossName}\\
+	}
+	
+	\vfill
+
+	{\minijianqi\zihao{2}\nuaaName \par}% 迷你简启体 这玩意儿得单独下载，一般电脑没有装
+	\vspace{0.3cm}
+	{\kaishu\zihao{-2} 研究生院\quad \nuaaCollege \par}
+	\vspace{0.1cm}
+	{\kaishu\zihao{3} \nuaaDate \par} 
+	
+	%空白
+	\clearpage
+	\phantom{s}
+	\thispagestyle{empty}
+	\clearpage
+
+
+	%----------------------英文封面----------------------
+	\newpage
+	\thispagestyle{empty}
+	\setmainfont{Times New Roman}
+	
+	\vspace*{-10pt}
+	\zihao{4}{\nuaaNameEn \par
+	\nuaaCollegeEn \par}
+	
+	\vspace*{30pt}
+	
+	\setstretch{1.2}\zihao{2}{\bfseries \nuaaTitleEn \par}
+	
+	\vspace*{1.35cm}
+	
+	\setstretch{1.6}\zihao{4}A Thesis in \par
+	\nuaaMajorEn  \par
+	\vspace*{4pt}
+	by\par
+	\nuaaAuthorNameEn \par
+	\vspace*{2pt}
+	Advised by \par
+	\vspace*{6pt}
+	Prof. \nuaaBigBossNameEn \par
+	\vspace*{10pt}
+	Submitted in Partial Fulfillment\par\par
+	\vspace*{8pt}
+	of the Requirements\par
+	\vspace*{6pt}
+	for the Degree of\par
+	\vspace*{10pt}
+	\nuaaDegreeEn \par
+	\vspace*{35pt}
+	\nuaaDateEn
+	
+	
+	%空白页
+	\clearpage
+	\phantom{s}
+	\thispagestyle{empty}
+	\clearpage
+	
+	
+	%----------------------承诺书签署页----------------------
+	\newpage
+	\thispagestyle{empty}
+	
+	\vspace*{-10pt}
+	
+	\zihao{2}{承诺书}\par
+	
+	\vspace*{1cm}
+	
+	\zihao{3}\justifying{本人声明所呈交的\nuaaMasterOrDoctor 士学位论文是本人在导师指导下进行的研究工作及取得的研究成果。除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得\nuaaName 或其他教育机构的学位或证书而使用过的材料。\par
+	本人授权\nuaaName 可以将学位论文的全部或部分内容编入有关数据库进行检索，可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。\par
+	（保密的学位论文在解密后适用本承诺书）\par
+	}
+	
+	\vspace*{4.3cm}
+	
+	\flushright{\zihao{3} 
+		\songti
+		\makebox[2.3cm][s]{作者签名}：\xiahuabox[3.2cm]{}\\
+		\makebox[2.3cm][s]{日期}：\xiahuabox[3.2cm]{}\\
+	}
+
+	%空白页
+	\clearpage
+	\phantom{s}
+	\thispagestyle{empty}
+	\clearpage
+	
+\end{titlepage}

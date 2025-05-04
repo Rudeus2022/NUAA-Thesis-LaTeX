@@ -1,0 +1,202 @@
+\chapter{常用}
+
+\section{图片}
+
+\subsection{单图居中}
+如图~\ref{fig::graphexample}所示
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 0.9\textwidth]{./Graphs/example/example.jpeg} 
+	\caption{单栏居中图片}
+	\label{fig::graphexample} 
+\end{figure}
+\subsection{双列跨页子图}
+
+\begin{figure}[!ht] \centering
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub1}\label{subf::sub1}
+	\end{subfigure}\hfill % 插入间隔
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub2}\label{subf::sub2}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[!ht]\ContinuedFloat \centering
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub3}\label{subf::sub3}
+	\end{subfigure}\hfill % 插入间隔
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub4}\label{subf::sub4}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[!ht]\ContinuedFloat \centering
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub5}\label{subf::sub5}
+	\end{subfigure}\hfill % 插入间隔
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub6}\label{subf::sub6}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[!ht]\ContinuedFloat \centering
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub7}\label{subf::sub7}
+	\end{subfigure}\hfill % 插入间隔
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub8}\label{subf::sub8}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[!ht]\ContinuedFloat \centering
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub9}\label{subf::sub9}
+	\end{subfigure}\hfill % 插入间隔
+	\begin{subfigure}[b]{0.49\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example.jpeg}
+		\caption{sub10}\label{subf::sub10}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[!ht]\ContinuedFloat \centering
+	\begin{subfigure}[b]{0.7\textwidth}\centering
+		\includegraphics[width=\textwidth]{./Graphs/example/example_2.jpeg}
+		\caption{sub11}\label{subf::sub11}
+	\end{subfigure}
+	\caption{双列跨页子图}
+	\label{fig::dual_col_subfigs}
+\end{figure}
+\FloatBarrier
+
+
+图~\ref{fig::dual_col_subfigs}\subref{subf::sub1}和图~\ref{fig::dual_col_subfigs}\subref{subf::sub3}分别为XXXXXXXXXXXXXX。
+
+\section{表格}
+
+\subsection{简单表格}
+
+	如表~\ref{tab::table_demo_1}所示。
+	\begin{table}[htbp]
+		\renewcommand{\arraystretch}{1.5}
+		\centering
+		\zihao{5}
+		\caption{XXXXXXXXXXXXX表}
+		\begin{tabular}{c c p{10pt} c c} 
+			\toprule % 表头上方线
+			表头 & 表头 	&& 表头 & 表头\\ 
+			\midrule % 表头与内容间线
+			XXX& XXX &&  XXX & XXX\\ 
+			XXX& XXX	 && XXX & XXX \\
+			XXX& XXX 	 && XXX & XXX \\
+			XXX & XXX	 && XXX & XXX \\
+			XXX& XXX	 && XXX & XXX \\
+			XXX & XXX	 && XXX & XXX \\
+			XXX  & 	XXX && XXX & XXX \\
+			XXX &  XXX	 && XXX & XXX \\
+	 		XXX  & XXX	 && XXX &  XXX\\
+	 		XXX  & XXX	 && XXX &  XXX\\
+	 		XXX	& XXX	 && XXX &  XXX\\
+	 		XXX    & XXX	 && XXX & XXX\\
+			\bottomrule % 表底线
+		\end{tabular}
+		\label{tab::table_demo_1}
+	\end{table}
+	
+	\subsection{跨页表格处理}
+	
+	见符号表
+	
+\section{公式}
+\subsection{行内公式}
+
+行内$a = b + c$公式
+
+
+\subsection{单行公式}
+
+如式\ref{eq::example}所示。
+
+\begin{equation}\label{eq::example}
+	A=\sqrt{AAAA\left(1-\left(\dfrac{AAAA_{AAAA}}{AAAA}\right)^{\dfrac{A^{\prime}-1}{A^{\prime}}}\right)} 
+\end{equation}
+
+\subsection{多行公式}
+
+\begin{equation}
+	\left\{\begin{array}{l}
+		A = \alpha  \\
+		B = \beta \\
+		O = \omega
+	\end{array}\right.
+\end{equation}
+
+
+\subsection{条件公式}
+使用\&符号对齐。
+\begin{equation}
+	\begin{cases}
+		case\quad a & , A>1  
+		\\ case\quad b & , B>1 
+		\\ case\quad c & , C<1
+	\end{cases}
+\end{equation}
+\subsection{矩阵}
+
+\begin{equation}\label{eq::example_tab}
+	A=
+	\begin{bmatrix}
+		0 & 0 & 2.243 & 0 & -0.2575 & 0\\
+		0.0021 & -3.771 & 0 & -0.3055 & 0.0002 & 0.1823\\
+		0 & 0 & 0 & 0 & -0.9035 &0 \\
+		0 & 0 & 0 & -7.8760 & 0 & 4.6860\\
+		0 & 0 & 0 & 0 & 1.99 & 0\\
+		-12.09 & 0 & 0 & -0.0519 & 0.0004 &-0.0322
+	\end{bmatrix}
+\end{equation}
+
+
+\section{列表项}
+
+\subsection{带编号}
+	列表项
+	
+	\begin{enumerate}[label=(\arabic*),listparindent=2em,left = 2em,topsep = 0pt,itemsep = 0pt,parsep= 0pt,partopsep=0pt]
+		\item 列表内容列表内容列表内容
+		\item 列表内容列表内容列表内容
+		\item 列表内容列表内容列表内容
+		\item 列表内容列表内容列表内容
+		\item 列表内容列表内容列表内容
+		\item 列表内容列表内容列表内容
+	\end{enumerate}
+	
+
+\section{参考文献引用}
+
+\subsection{角标}
+
+某某\cite{ref_thesis}XXXXXXXXXXXX，某某\cite{ref_book}XXXXXXXXXXXX。
+
+\subsection{强调}
+
+根据文献中\parencite{ref_article}的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,175 @@
+% NUAA thesis style settings
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{nuaaThesisStyle}[2025/5/02 1.0 Thesis package]
+
+% 论文信息
+%\RequirePackage{./Settings/nuaaThesisInfos}
+
+% 页面设置
+\RequirePackage[a4paper, left=3.0cm, right=2.8cm, top=3.3cm, bottom=3.3cm]{geometry} %页边距
+
+% 宏包
+\RequirePackage{times} %Times New Roman
+\RequirePackage{graphicx} %插图
+\RequirePackage{amsmath, amssymb} %
+\RequirePackage{booktabs}	
+\RequirePackage{algorithm}
+\RequirePackage{algorithmic}
+\RequirePackage{indentfirst}
+\RequirePackage{tabularx}% 增强版的表格环境
+\RequirePackage{ltxtable}% longtable + tabularx 缝合怪
+\RequirePackage{ragged2e}% 文本对齐
+\RequirePackage{setspace}% 行间距
+\RequirePackage{enumitem}% 列表项间距
+\RequirePackage{subcaption}
+\RequirePackage{glossaries}
+\RequirePackage{float}
+\RequirePackage{placeins}%浮动体限制宏包
+\RequirePackage[T1]{fontenc}%保证英文正文字体加粗有效（主要用于英文摘要Keywords）
+%\RequirePackage{floatrow} % 灵活的布局
+
+%标题数字中文
+\RequirePackage{zhnumber}% 编号中文化
+
+% 加入 hyperref 设置，确保章节号出现在 PDF 导航栏中
+\RequirePackage{hyperref}% 交叉引用宏包
+\hypersetup{
+	colorlinks=true,%关闭颜色
+	citecolor=black,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=black,
+	pdftitle={硕博士论文},
+	bookmarksnumbered=true % 使书签显示章节编号
+}
+
+%固定行距设置
+%\setlength\baselineskip{11pt}
+\linespread{1.48} % 调整倍数，以实现约20pt的行距,大致公式 coef = 20/（10.5 * 1。2）
+
+% 标题样式
+\RequirePackage{titlesec} % 标题样式设置
+% 一级标题(第X章大标题)
+\titleformat{\chapter}[block]
+{\centering\heiti\zihao{-3}} 	% 黑体小三号 15pt 
+{第\zhnum{chapter}章}            % 章节编号，使用中文数字
+{0.5em}                          % 标题编号和标题文本之间的距离
+{}								% 标题前距离
+\titlespacing*{\chapter}{0pt}{0pt}{10bp }
+ 
+% 二级标题（1.1）
+\titleformat{\section}[hang]
+{\heiti\zihao{4}}             % 黑体四号 14pt
+{\thesection}
+{0.5em} 
+{}
+\titlespacing*{\section}{0pt}{0pt}{5bp}
+ 
+% 三级标题（1.1.1）
+\titleformat{\subsection}[hang]
+{\heiti\zihao{-4}}            % 黑体小四号 12pt
+{\thesubsection}
+{0.5em}
+{}
+\titlespacing*{\subsection}{0pt}{4pt}{4pt}
+
+% 四级标题（1.1.1.1）
+\setcounter{secnumdepth}{3}
+\titleformat{\subsubsection}[hang]
+{\heiti\zihao{-4}}            % 黑体小四号
+{\thesubsubsection}
+{0.5em}
+{}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0bp}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+
+% 列表项
+\setlength{\itemsep}{-5pt}
+\titlespacing*{\item}{0pt}{0.5\baselineskip}{0.5\baselineskip}
+
+% 设置表题与图题字体为宋体五号
+\RequirePackage{caption}%
+\captionsetup{font={rm,small}, labelfont={rm,small} ,labelsep=space} % 设置宋体五号（small）  labelsep=space 表示标签后只留一个空格，不带冒号
+% 参考文献
+% https://blog.csdn.net/cskywit/article/details/86727860
+% https://blog.csdn.net/weixin_41951986/article/details/117385037
+% https://www.bilibili.com/opus/919209888547078148
+\RequirePackage[backend=biber, style=gb7714-2015, doi = false,url =false,gbpub=false ]{biblatex} %,gbpunctin=false
+%\DefineBibliographyStrings{english}{in={}} %去掉英文会议论文前的 in：
+\renewcommand{\bibname}{\zihao{5}参考文献}%字体为宋体五号
+\setlength{\bibitemsep}{0pt} %设置参考文献条目间距
+\renewcommand{\bibname}{\centering\heiti\zihao{-3} 参考文献} % 字体调整
+
+%\defbibheading{bibliography}[\bibname]{\centering\heiti\zihao{-3}} 
+	
+% 页眉页脚
+\RequirePackage{fancyhdr} % 页眉页脚
+\pagestyle{fancy}
+\fancypagestyle{plain}{}%%尽管前面\pagestyle已经设置为fancy，但是\chapter所在页面即章节首页还是默认plain样式，所以将plain重新定义为fancy的样式（后面花括号内留空默认fancy样式，将页眉页脚重新写一遍也可以），这样所有页面就都有页眉了。 
+\fancyhf{}
+\fancyhead[CO]{\zihao{5} \nuaaPageHeader}
+\fancyhead[CE]{\zihao{5} \nuaaTitleHead}
+\fancyfoot[LE,RO]{\thepage} 	% 奇数页码右对齐
+\setlength{\headheight}{1mm}    % 页眉与正文之间的距离
+\setlength{\footskip}{10mm}   % 页脚与页面底部的距离
+
+
+% 目录样式
+\RequirePackage{tocloft} %目录、图标清单样式设置宏包
+\setlength{\cftbeforetoctitleskip}{0pt} % 设置“目录”前空白
+\setlength{\cftaftertoctitleskip}{10pt} % 设置“目录”标题与列表的间距
+\renewcommand*\contentsname{\hfill \zihao{-3}目录 \hfill}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % 章节级别的虚线
+\renewcommand{\cftdotsep}{1} %虚线密度
+% 设置章节、节、小节在目录中的缩进
+\setlength{\cftchapindent}{0pt}    	% 章节不缩进
+\setlength{\cftsecindent}{2em}   	% 节缩进
+\setlength{\cftsubsecindent}{4em}  	% 小节缩进
+% 设置章节、节、小节的条目之间的行距
+\setlength{\cftbeforechapskip}{0pt}  % 章节条目之间的距离
+\setlength{\cftbeforesecskip}{0pt}    % 节条目之间的距离
+\setlength{\cftbeforesubsecskip}{0pt} % 小节条目之间的距离
+% 设置标签和标题之间的距离
+\setlength{\cftchapnumwidth}{2em}   % 章节编号与标题之间的距离
+\setlength{\cftsecnumwidth}{2em}    % 节编号与标题之间的距离
+\setlength{\cftsubsecnumwidth}{2em} % 小节编号与标题之间的距离
+% 调整目录字体样式
+\renewcommand{\cftchapfont}{\centering\zihao{5}}   % 章节字体加粗
+\renewcommand{\cftsecfont}{\centering\zihao{5}}  % 节字体正常
+\renewcommand{\cftsubsecfont}{\centering\zihao{5}}  % 小节字体斜体
+% 调整目录页码字体样式
+\renewcommand{\cftchappagefont}{\centering\zihao{5}} % 章节页码字体
+\renewcommand{\cftsecpagefont}{\centering\zihao{5}}  % 节页码字体
+\renewcommand{\cftsubsecpagefont}{\centering\zihao{5}} % 小节页码字体
+
+% 图表清单样式
+\setlength{\cftbeforeloftitleskip}{0pt} % 设置“图清单”前空白
+\setlength{\cftbeforelottitleskip}{0pt} % 设置“表清单”前空白
+\setlength{\cftafterloftitleskip}{10pt} % 设置“图清单”标题与列表的间距
+\setlength{\cftafterlottitleskip}{10pt} % 设置“表清单”标题与列表的间距
+\renewcommand*\listfigurename{\hfill \zihao{-3} 图表清单 \hfill} % 图标清单 标题
+\renewcommand*\listtablename{\hfill \zihao{-3} \hfill}
+\renewcommand{\cftfigpresnum}{图\,} % 在图编号前加上“图”
+\renewcommand{\cfttabpresnum}{表\,} % 在表编号前加上“表”
+\setlength{\cftfigindent}{0pt} % 图标签缩进
+\setlength{\cfttabindent}{0pt} % 表标签缩进
+\setlength{\cftfignumwidth}{3.3em}% 图标签宽度
+\setlength{\cfttabnumwidth}{3.3em} % 表标签宽度
+% 公式样式
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+%\setlength{\abovedisplayskip}{1pt}
+%\setlength{\belowdisplayskip}{1pt}
+% 加载系统字体
+%\setCJKmainfont{FandolSong}
+\RequirePackage{fontspec} %
+\newCJKfontfamily\minijianqi{迷你简启体.ttf} % 安装的字体 记得加后缀，不然找不到
+
+%子图交叉引用设置
+\captionsetup{subrefformat=parens}
+%   If you want parentheses around the sub-figure part of the reference, so they will look %   like ‘1(a)’, you may get them this way: 
+%   \renewcommand\thesubfigure{(\alph{subfigure})}
+
+
+
+%word行距转换为LaTeX行距的经验值
+%https://mp.weixin.qq.com/s?__biz=Mzg3ODEzMzc1Mw==&mid=2247490249&idx=2&sn=9821c4a8c82a1d1c868c9311aa5653ba&chksm=ce6f4a16e8d76fd67a53ac8b651cfdbd1b209ee8272f913086ce747def402a0c00c3398ff926&scene=27
