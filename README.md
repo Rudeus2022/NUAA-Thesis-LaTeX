@@ -1,2 +1,34 @@
-# NUAA-Thesis-LaTeX
-used for NUAAers' thesis writting
+# 简要说明
+
+## 1.简介
+
+适用于南京航空航天大学硕博学位论文（中文）攥写，格式要求参考了学校的攥写要求及相关模板。
+
+## 2.环境配置
+
+电脑系统：Windows 11
+
+软件版本：
+
+- TeX Live 2021
+- TeXstudio 4.8.4
+
+TeXstudio 设置：
+
+- 编译器选择XeLaTeX
+- 默认文献工具：Biber
+
+## 3.简要使用说明
+
+- 图片、表格、公式等用法见文中例子；
+
+- 参考文献：结合Zotero等文献管理工具使用，手动复制BibLaTeX引文格式到`References/references.bib`中去，修改该文件后需要在TeXstudio中"工具->清理辅助文件"；
+- 查重时，单独修改`Settings/nuaaThesisInfos_ano.tex`中的内容，并交换其中的注释（见`main.tex`中的批注）；
+- 部分字体需要手动安装（右键->安装），文件位于`Settings/`目录下的`迷你简启体.ttf`和`simsun.ttc`。
+
+## 4.注意事项
+
+1. 参考文献为国标GB/T 7714-2015格式，学校格式要求有所不同，如需严格按照学校格式处理，请自行实现；
+2. 有时候编译会报error，但编译器会自动修正可能的错误，pdf也能正常生成，但我太懒了，懒得去debug了，能跑就行了；
+3. 如需新增章节或添加附录等，请自行学习并实现。
+
